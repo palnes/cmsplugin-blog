@@ -45,21 +45,15 @@ Configuration and setup
 Settings
 ========
 Add the following apps to your :setting:`django:INSTALLED_APPS` which enable cmsplugin-blog
-and required or highly recommended applications/libraries):
-
-* ``'cmsplugin_blog'``, cmsplugin-blog itself
-* ``'djangocms_utils'``, utilities and extensions to django CMS
-* ``'simple_translation'``, enables multilingual features
-* ``'tagging'``, enables tagging of posts
-* ``'staticfiles'``, for serving static files ::
+and required or highly recommended applications/libraries)::
 
     INSTALLED_APPS = (
         ...
-        'cmsplugin_blog',
-        'djangocms_utils',
-        'simple_translation',
-        'tagging',
-        'staticfiles',
+        'cmsplugin_blog', #
+        'djangocms_utils', # utilities and extensions to django CMS
+        'simple_translation', # enables multilingual features
+        'tagging', # enables tagging of posts
+        'staticfiles', # for serving static files
         ...
     )
 
@@ -93,7 +87,7 @@ If you are interested in multilingual blog, add ``cmsplugin_blog.middleware.Mult
 
     MIDDLEWARE_CLASSES = (
         ...
-        'cms.middleware.toolbar.ToolbarMiddleware',
+        'cmsplugin_blog.middleware.MultilingualBlogEntriesMiddleware',
     )
 
 Blog entry placeholders
